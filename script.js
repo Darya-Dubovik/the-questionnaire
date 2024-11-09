@@ -34,9 +34,12 @@ form.addEventListener("submit", (event) => {
       }),
     })
     .then((result) => {
-      alert("Данные успешно отправлены!"); 
       form.reset();
+      check();
       return result.json();
+    })
+    .then((data) => {
+      alert(data.message); 
     })
     .catch((error) => {
       alert("Ошибка!"); 
